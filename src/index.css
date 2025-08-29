@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--background);
+  --color-panel: var(--panel);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-border: var(--border);
+}
+
+
+@layer base {
+  :root {
+    --background: #f1ecec;
+    --panel: #ffffff;
+    --text: #0f172a;
+    --muted: #454b61;
+    --brand: #2563eb;
+    --ring: #3b82f6;
+    --card: #ffffff;
+    --border: #e2e8f0;
+  }
+
+  .dark {
+    --background: #0b0f19;
+    --panel: #0f172a;
+    --text: #e5e7eb;
+    --muted: #9aa4b2;
+    --brand: #60a5fa;
+    --ring: #3b82f6;
+    --card: #111827;
+    --border: #1f2937;
+  }
+
+  html {
+    @apply scroll-smooth
+  }
+
+  body {
+    margin: 0;
+    font-family: sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+    color: var(--text);
+    background: var(--background);
+  }
+
+  main {
+    padding-top: 80px;
+    position: relative;
+    z-index: 1;
+    
+    pointer-events: none;
+    /* Allow events to pass through to particles */
+  }
+
+  a {
+    pointer-events: auto !important;
+  }
+  img {
+  pointer-events: auto;
+  }
+
+}
+
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+@utility container {
+  @apply w-full;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+@utility card {
+  @apply col-span-12 rounded-xl p-4 border border-border bg-card transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg hover:border-ring;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+
+
+
+
+
+
+
