@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function ParticlesBackground() {
   const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "light"
+    () => localStorage.getItem("theme") || "dark"
   );
   const [particlesLoaded, setParticlesLoaded] = useState(false);
 
