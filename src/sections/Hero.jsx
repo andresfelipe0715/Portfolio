@@ -11,7 +11,7 @@ export default function Hero() {
 
       <h1 className="m-0 text-[clamp(2rem,4vw+1rem,3rem)]">Andres Guaglianone</h1>
       <p className="sub text-muted">Full-stack Developer</p>
-      <p className="sub text-muted">BS. in Systems Engineering</p>
+      <p className="sub text-muted">B.S. in Systems Engineering</p>
 
       <div className="flex gap-2 flex-wrap justify-center">
         <a
