@@ -6,7 +6,7 @@ export const projects = [
     tags: ["React", "PHP", "Symfony", "Postgresql", "auth"],
     links: {
       
-      repo: "https://github.com/you/devnotes",
+      repo: "https://github.com/andresfelipe0715/cvp-demo",
     },
     image: "/projects-img/Demo.png"
   },

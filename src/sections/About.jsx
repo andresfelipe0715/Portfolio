@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="py-24" aria-label="About">
       <h2 className="text-2xl mb-4">About</h2>
       <p className="text-muted mb-6">
-        I'm a Software Engineer who loves building reliable solutions with technology.
+        "I'm a Software Engineer with a BS in Systems Engineering, passionate about building reliable tech solutions.
       </p>
       <div className="grid gap-4 grid-cols-12">
         <div className="card md:col-span-6 pointer-events-auto">

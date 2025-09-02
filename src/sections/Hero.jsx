@@ -10,7 +10,8 @@ export default function Hero() {
       </span>
 
       <h1 className="m-0 text-[clamp(2rem,4vw+1rem,3rem)]">Andres Guaglianone</h1>
-      <p className="sub text-muted">Software Engineer (Junior)</p>
+      <p className="sub text-muted">Full-stack Developer</p>
+      <p className="sub text-muted">BS. in Systems Engineering</p>
 
       <div className="flex gap-2 flex-wrap justify-center">
         <a
@@ -21,7 +22,7 @@ export default function Hero() {
           View Projects
         </a>
         <a
-          href="https://drive.google.com/file/d/1tyCsBRASJvJEWGHrsCgXox4iCJG9KYrm/view?usp=drive_link"
+          href="https://docs.google.com/document/d/11OkSp7IZ9Ef1deBQBhpfojOZCpcFf8EiR0dCTKnjJnE/edit?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className=" card md:col-span-6 pointer-events-auto hover:border-ring"
