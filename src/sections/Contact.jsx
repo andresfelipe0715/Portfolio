@@ -84,7 +84,7 @@ export default function Contact() {
               <div>
                 <h4 className="font-medium">LinkedIn</h4>
                 <a
-                  href="https://www.linkedin.com/in/andres-guaglianone-935742267/"
+                  href="https://www.linkedin.com/in/andresguaglianone/"
                   className="text-gray-500 hover:text-blue-500"
                 >
                   Andres Guaglianone
