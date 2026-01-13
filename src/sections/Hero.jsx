@@ -22,7 +22,7 @@ export default function Hero() {
           View Projects
         </a>
         <a
-          href="https://docs.google.com/document/d/11OkSp7IZ9Ef1deBQBhpfojOZCpcFf8EiR0dCTKnjJnE/edit?usp=sharing"
+          href="https://docs.google.com/document/d/1WP1DtihD13xcSzQMz4A7Kz1h78ENo2uQ/edit?usp=sharing&ouid=105483751432569552413&rtpof=true&sd=true"
           target="_blank"
           rel="noreferrer"
           className=" card md:col-span-6 pointer-events-auto hover:border-ring"
