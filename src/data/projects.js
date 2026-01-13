@@ -21,6 +21,18 @@ export const projects = [
     },
     image: "/projects-img/portfolio.png"
   },
+
+  {
+    title: "My Portfolio",
+    description:
+      "Real-Time Trading Platform",
+    tags: ["React","Tailwind CSS","JavaScript"],
+    links: {
+      
+      repo: "https://github.com/andresfelipe0715/Trading-system",
+    },
+    image: "/projects-img/TradingSystem.png"
+  },
   
  
 ];
