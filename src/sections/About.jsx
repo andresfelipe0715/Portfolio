@@ -54,8 +54,8 @@ export default function About() {
                 <span className="font-semibold text-text">Colombia</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span className="text-muted">Currently</span>
-                <span className="font-semibold text-text">Software Engineer @ AINOVIX</span>
+                <span className="text-muted">Role</span>
+                <span className="font-semibold text-text">Full-Stack Software Engineer</span>
               </li>
               <li className="flex justify-between gap-4">
                 <span className="text-muted">Background</span>

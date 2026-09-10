@@ -48,11 +48,6 @@ export default function Experience() {
                           — {job.location}
                         </span>
                       )}
-                      {isActive && (
-                        <span className="ml-2 eyebrow align-middle text-[10px] px-2 py-0.5 rounded-full bg-brand/10">
-                          Current
-                        </span>
-                      )}
                     </h3>
                     <span className="badge">{job.period}</span>
                   </header>

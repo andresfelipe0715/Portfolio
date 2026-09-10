@@ -93,17 +93,7 @@ export default function Hero() {
 
         {/* Right column — floating glass cards */}
         <div className="hero-in hero-in-5 lg:col-span-5 relative hidden sm:block h-[320px] lg:h-[380px]">
-          <div className="absolute top-0 left-4 right-10 glass floating-card p-5 rotate-[4deg] pointer-events-auto">
-            <p className="eyebrow mb-2">Currently building</p>
-            <p className="font-semibold text-text">
-              Software Engineer @ AINOVIX
-            </p>
-            <p className="text-muted text-sm mt-1">
-              Full-stack SaaS · Next.js · Supabase
-            </p>
-          </div>
-
-          <div className="absolute top-[38%] right-0 left-10 glass floating-card p-5 -rotate-[3deg] pointer-events-auto">
+          <div className="absolute top-4 left-4 right-8 glass floating-card p-5 rotate-[3deg] pointer-events-auto">
             <p className="eyebrow mb-2">Focus area</p>
             <p className="font-semibold text-text">AI Workflows &amp; Automation</p>
             <p className="text-muted text-sm mt-1">
@@ -111,7 +101,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="absolute bottom-0 left-8 right-4 glass floating-card p-5 rotate-[2deg] pointer-events-auto">
+          <div className="absolute bottom-4 left-10 right-4 glass floating-card p-5 -rotate-[2deg] pointer-events-auto">
             <p className="eyebrow mb-2">Tech stack</p>
             <p className="text-text text-sm font-medium">
               React · FastAPI · PostgreSQL · Tailwind
