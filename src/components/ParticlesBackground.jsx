@@ -23,7 +23,7 @@ export default function ParticlesBackground() {
   // Watch for changes in localStorage when theme is toggled
   useEffect(() => {
     const handleStorage = () => {
-      const storedTheme = localStorage.getItem("theme") || "light";
+      const storedTheme = localStorage.getItem("theme") || "dark";
       setTheme(storedTheme);
     };
 

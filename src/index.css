@@ -6,33 +6,41 @@
   --color-text: var(--text);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
   --color-ring: var(--ring);
   --color-card: var(--card);
   --color-border: var(--border);
+  --font-heading: "Space Grotesk", sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+  --font-body: "Sora", sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
 }
 
 
 @layer base {
   :root {
-    --background: #f1ecec;
+    --background: #f4f5fb;
     --panel: #ffffff;
-    --text: #0f172a;
-    --muted: #454b61;
-    --brand: #2563eb;
-    --ring: #3b82f6;
-    --card: #ffffff;
-    --border: #e2e8f0;
+    --text: #0f1224;
+    --muted: #5b5f77;
+    --brand: #4338ca;
+    --brand-2: #7c3aed;
+    --brand-3: #db2777;
+    --ring: #6366f1;
+    --card: rgba(255, 255, 255, 0.6);
+    --border: rgba(15, 18, 36, 0.1);
   }
 
   .dark {
-    --background: #0b0f19;
-    --panel: #0f172a;
-    --text: #e5e7eb;
-    --muted: #9aa4b2;
-    --brand: #60a5fa;
-    --ring: #3b82f6;
-    --card: #111827;
-    --border: #1f2937;
+    --background: #0a0b14;
+    --panel: #0f1120;
+    --text: #e7e8f5;
+    --muted: #9a9db8;
+    --brand: #818cf8;
+    --brand-2: #a78bfa;
+    --brand-3: #f472b6;
+    --ring: #818cf8;
+    --card: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.1);
   }
 
   html {
@@ -41,16 +49,20 @@
 
   body {
     margin: 0;
-    font-family: sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+    font-family: var(--font-body);
     color: var(--text);
     background: var(--background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 
   main {
     padding-top: 80px;
     position: relative;
     z-index: 1;
-    
+
     pointer-events: none;
     /* Allow events to pass through to particles */
   }
@@ -74,18 +86,280 @@ body,
 
 @utility container {
   @apply w-full;
-  max-width: 1024px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(1rem, 4vw, 3rem);
 }
 
 
 @utility card {
-  @apply col-span-12 rounded-xl p-4 border border-border bg-card transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg hover:border-ring;
+  @apply col-span-12 rounded-2xl p-4 border border-border bg-card backdrop-blur-xl shadow-[0_4px_24px_-8px_rgba(15,18,36,0.15)] transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-lg hover:border-ring;
+}
+
+@utility glass {
+  @apply rounded-2xl border border-border bg-card backdrop-blur-xl shadow-[0_4px_24px_-8px_rgba(15,18,36,0.15)];
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+}
+
+@utility badge {
+  @apply font-mono border border-border px-2 py-0.5 rounded-md bg-bg/50 text-muted text-[12px];
+}
+
+@utility pill-link {
+  @apply border border-border bg-bg/40 text-text px-3 py-1 rounded-lg transition-all hover:border-ring hover:text-brand text-sm;
 }
 
 .section {
-  padding: 96px 0;
+  padding: 112px 0;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--brand-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Faint background grid + mesh — fixed full-viewport layer so it reads
+   consistently behind every section, not just the Hero. Sits below
+   ParticlesBackground and page content, above the plain background color. */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 25%, black, transparent 75%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 25%, black, transparent 75%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating glass cards with layered depth shadows (Hero right column) */
+.floating-card {
+  box-shadow:
+    0 8px 10px -6px rgba(15, 18, 36, 0.15),
+    0 20px 25px -8px rgba(15, 18, 36, 0.2),
+    0 40px 60px -24px rgba(67, 56, 202, 0.25);
+}
+
+.dark .floating-card {
+  box-shadow:
+    0 8px 10px -6px rgba(0, 0, 0, 0.35),
+    0 20px 25px -8px rgba(0, 0, 0, 0.45),
+    0 40px 70px -20px rgba(129, 140, 248, 0.35);
+}
+
+/* Experience timeline */
+.timeline-line {
+  background: linear-gradient(to bottom, var(--brand), var(--brand-2), transparent);
+}
+
+.timeline-dot {
+  box-shadow: 0 0 0 4px var(--background);
+}
+
+.timeline-dot-active {
+  box-shadow: 0 0 0 4px var(--background), 0 0 0 8px color-mix(in srgb, var(--brand) 35%, transparent), 0 0 24px 4px color-mix(in srgb, var(--brand-2) 55%, transparent);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Navbar: brand mark, nav links, scroll-spy active state, CTA pill        */
+/* ---------------------------------------------------------------------- */
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.625rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: 0 4px 14px -4px color-mix(in srgb, var(--brand) 55%, transparent);
+  flex-shrink: 0;
+}
+
+.nav-link {
+  position: relative;
+  white-space: nowrap;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.28rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(.16, 1, .3, 1), opacity 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.nav-link-active {
+  color: var(--brand);
+  font-weight: 700;
+  background: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+
+.nav-link-active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #fff;
+  background: linear-gradient(120deg, var(--brand), var(--brand-2), var(--brand-3));
+  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--brand-2) 60%, transparent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 22px -6px color-mix(in srgb, var(--brand-2) 70%, transparent);
+  filter: brightness(1.05);
+}
+
+.nav-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Scroll-reveal: fade + slide up on intersection, staggered for grids     */
+/* ---------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(.16, 1, .3, 1), transform 0.7s cubic-bezier(.16, 1, .3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(.16, 1, .3, 1), transform 0.55s cubic-bezier(.16, 1, .3, 1);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 70ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 140ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 210ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 350ms; }
+.reveal-stagger > *:nth-child(n+7) { transition-delay: 420ms; }
+
+/* ---------------------------------------------------------------------- */
+/* Hero entrance: staggered fade-up on initial load                       */
+/* ---------------------------------------------------------------------- */
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-in {
+  opacity: 0;
+  animation: hero-fade-up 0.7s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+.hero-in-1 { animation-delay: 0.05s; }
+.hero-in-2 { animation-delay: 0.18s; }
+.hero-in-3 { animation-delay: 0.32s; }
+.hero-in-4 { animation-delay: 0.46s; }
+.hero-in-5 { animation-delay: 0.6s; }
+
+/* Cursor-aware soft radial highlight — Hero only. Position driven by
+   --mx/--my custom properties set on pointermove (see Hero.jsx). */
+.hero-glow-follow {
+  background: radial-gradient(
+    480px circle at var(--mx, 50%) var(--my, 30%),
+    color-mix(in srgb, var(--brand-2) 16%, transparent),
+    transparent 65%
+  );
+  transition: opacity 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-in {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-glow-follow {
+    display: none;
+  }
 }
 
 

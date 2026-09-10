@@ -1,3 +1,4 @@
 export const languages = [
-  "English - Fluent", "Spanish - Native"
+  { name: "Spanish", level: "Native", code: "ES" },
+  { name: "English", level: "Fluent", code: "EN" },
 ];

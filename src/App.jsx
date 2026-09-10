@@ -8,6 +8,7 @@ import About from "./sections/About.jsx";
 import Experience from "./sections/Experience.jsx";
 import Projects from "./sections/Projects.jsx";
 import Skills from "./sections/Skills.jsx";
+import Education from "./sections/Education.jsx";
 import Languages from "./sections/Languages.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./components/Footer.jsx";
@@ -28,14 +29,15 @@ export default function App() {
           <ThemeToggle size="lg" />
         </div>
       )}
+      <div className="bg-grid" aria-hidden="true" />
       <ParticlesBackground />
       <main id="main" className="container min-w-[320px]" role="main" aria-label="Content">
-
-        <Hero /><br />
+        <Hero />
         <About />
         <Experience />
         <Projects />
         <Skills />
+        <Education />
         <Languages />
         <Contact />
       </main>

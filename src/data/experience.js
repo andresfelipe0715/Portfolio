@@ -1,14 +1,25 @@
 export const experience = [
   {
-    company: "UFPSO",
-    role: "Full-stack developer",
-    period: "07/2024 — 12/2024",
+    company: "AINOVIX",
+    role: "Software Engineer",
+    period: "Jan 2026 — Sep 2026",
+    location: "Germany",
     bullets: [
-      "Built a full-stack document management app using React, Symfony (PHP), PostgreSQL, API endpoints, Git, Agile SDLC.",
-      "Designed and implemented a responsive, cross-device UI with strong frontend and backend integration.",
-      "Wrote unit tests and automated scripts to improve software quality and reduce bugs.",
-      "Collaborated in an Agile team (scrum meetings, version control) to deliver on time."
+      "Integrated and improved AI-based tools and workflows to automate processes, reduce manual work, and improve productivity.",
+      "Developed full-stack B2B SaaS applications from the ground up using Next.js, React, Supabase, and Tailwind CSS.",
+      "Implemented real-time collaboration features, role-based access control, a responsive interface, and secure data access with SQL databases, Row Level Security, and layered client architecture.",
     ],
   },
-  
+  {
+    company: "UFPSO",
+    role: "Full-Stack Developer — Internship",
+    period: "2024",
+    bullets: [
+      "Built a full-stack document management application using React, Symfony (PHP), PostgreSQL, and Docker.",
+      "Delivered a responsive interface with robust, well-tested integration between frontend and backend.",
+      "Implemented secure authentication, role-based access control, and data protection under an MVC architecture.",
+      "Wrote unit tests and automation scripts that reduced errors and improved overall software quality.",
+      "Worked within an Agile/Scrum methodology, using Git for version control and on-time delivery of tasks.",
+    ],
+  },
 ];
