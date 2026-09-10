@@ -332,17 +332,6 @@ body,
 .hero-in-4 { animation-delay: 0.46s; }
 .hero-in-5 { animation-delay: 0.6s; }
 
-/* Cursor-aware soft radial highlight — Hero only. Position driven by
-   --mx/--my custom properties set on pointermove (see Hero.jsx). */
-.hero-glow-follow {
-  background: radial-gradient(
-    480px circle at var(--mx, 50%) var(--my, 30%),
-    color-mix(in srgb, var(--brand-2) 16%, transparent),
-    transparent 65%
-  );
-  transition: opacity 0.4s ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-stagger > * {
@@ -355,10 +344,6 @@ body,
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
-  }
-
-  .hero-glow-follow {
-    display: none;
   }
 }
 

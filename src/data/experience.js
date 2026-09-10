@@ -6,8 +6,10 @@ export const experience = [
     location: "Germany",
     bullets: [
       "Integrated and improved AI-based tools and workflows to automate processes, reduce manual work, and improve productivity.",
-      "Developed full-stack B2B SaaS applications from the ground up using Next.js, React, Supabase, and Tailwind CSS.",
+      "Developed full-stack B2B SaaS applications from the ground up using Next.js, React, Supabase, and Tailwind CSS, including an AI-powered chatbot with 25 tools for natural language task management.",
       "Implemented real-time collaboration features, role-based access control, a responsive interface, and secure data access with SQL databases, Row Level Security, and layered client architecture.",
+      "Built cross-platform applications for web, mobile (Android), and PWA using Capacitor and responsive architecture, enabling single codebase deployment across devices.",
+      "Architected AI-powered e-invoicing system using LLM orchestration (Gemini) for intelligent document extraction, OCR pipeline for multi-format input processing, and deterministic validation against German regulatory standards (XRechnung 3.0.2, ZUGFeRD), with human-in-the-loop confirmation to prevent AI hallucination in financial documents.",
     ],
   },
   {

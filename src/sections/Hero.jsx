@@ -1,39 +1,7 @@
-import { useEffect, useRef } from "react";
-
 export default function Hero() {
-  const sectionRef = useRef(null);
-
-  // Cursor-aware soft radial highlight: cheap to run because it only ever
-  // writes two CSS custom properties directly to the DOM node (no React
-  // state/re-render per pointer move) and is skipped entirely for
-  // prefers-reduced-motion via the .hero-glow-follow CSS rule.
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let frame = null;
-    const handlePointerMove = (e) => {
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        const rect = el.getBoundingClientRect();
-        el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-        el.style.setProperty("--my", `${e.clientY - rect.top}px`);
-        frame = null;
-      });
-    };
-
-    el.addEventListener("pointermove", handlePointerMove);
-    return () => {
-      el.removeEventListener("pointermove", handlePointerMove);
-      if (frame) cancelAnimationFrame(frame);
-    };
-  }, []);
-
   return (
     <section
       id="hero"
-      ref={sectionRef}
       aria-label="hero"
       className="relative flex flex-col justify-center min-h-screen py-24"
     >
@@ -48,12 +16,6 @@ export default function Hero() {
         <div className="glow-blob w-[420px] h-[420px] bottom-0 right-[8%] bg-brand-2/25 dark:bg-brand-2/20" />
         <div className="glow-blob w-[300px] h-[300px] top-1/3 right-[30%] bg-brand-3/20" />
       </div>
-
-      {/* Cursor-following soft highlight, layered behind content */}
-      <div
-        className="absolute inset-0 -z-10 hero-glow-follow pointer-events-none"
-        aria-hidden="true"
-      />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
         {/* Left column */}
