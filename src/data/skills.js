@@ -21,6 +21,10 @@ export const skills = [
   { name: "AI Workflows", logo: null, category: "AI & Automation" },
   { name: "n8n", logo: null, category: "AI & Automation" },
   { name: "Process Automation", logo: null, category: "AI & Automation" },
+  { name: "Claude", logo: null, category: "AI & Automation" },
+  { name: "Chatbots", logo: null, category: "AI & Automation" },
+  { name: "MCP", logo: null, category: "AI & Automation" },
+  { name: "Plugins", logo: null, category: "AI & Automation" },
 
   // Tools
   { name: "Git", logo: "/logos/git.png", category: "Tools" },
