@@ -2,7 +2,7 @@ export const experience = [
   {
     company: "AINOVIX",
     role: "Software Engineer",
-    period: "Jan 2026 — Sep 2026",
+    period: "Sep 2025 — Sep 2026",
     location: "Germany",
     bullets: [
       "Integrated and improved AI-based tools and workflows to automate processes, reduce manual work, and improve productivity.",

@@ -25,8 +25,8 @@ export default function Hero() {
           </span>
 
           <h1 className="hero-in hero-in-2 m-0 text-[clamp(2.4rem,4.5vw+1rem,4rem)] font-bold tracking-tight leading-[1.05]">
-            Building <span className="text-gradient">bold, full-stack</span>{" "}
-            products with React &amp; AI
+            Building software{" "}
+            <span className="text-gradient">and automating it with AI</span>
           </h1>
 
           <p className="hero-in hero-in-3 text-lg text-text/90 max-w-xl">
@@ -56,10 +56,10 @@ export default function Hero() {
         {/* Right column — floating glass cards */}
         <div className="hero-in hero-in-5 lg:col-span-5 relative hidden sm:block h-[320px] lg:h-[380px]">
           <div className="absolute top-4 left-4 right-8 glass floating-card p-5 rotate-[3deg] pointer-events-auto">
-            <p className="eyebrow mb-2">Focus area</p>
-            <p className="font-semibold text-text">AI Workflows &amp; Automation</p>
+            <p className="eyebrow mb-2">Focus</p>
+            <p className="font-semibold text-text">Building software &amp; automating it with AI</p>
             <p className="text-muted text-sm mt-1">
-              LLM integration · real-time systems
+              Full-stack SaaS · workflow automation
             </p>
           </div>
 
